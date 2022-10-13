@@ -1,0 +1,11 @@
+select  Resultados.preguntar, COUNT(Resultados.preguntar) from Resultados
+inner join Preguntas on Preguntas.Idpreguntas = Resultados.preguntar
+where Preguntas.iencuesta = 1
+group by Resultados.preguntar
+
+Select Encuesta.Idencuesta, Encuesta.Nombre, Encuesta.Descripcion, Preguntas.Pregunta, Preguntas.EsRequerido from Encuesta INNER JOIN Preguntas ON Encuesta.Idencuesta = Preguntas.Idpregunta
+
+Select Encuesta.Nombre as encuesta, Encuesta.Descripcion as decripcion_encuenta, Preguntas.Pregunta, Preguntas.TipoCampo as Tipo_campo_a_mostrar, Preguntas.EsRequerido  
+FROM Preguntas 
+INNER JOIN Encuesta on Encuesta.Idencuesta = Preguntas.iencuesta
+where Preguntas.iencuesta = 2;
